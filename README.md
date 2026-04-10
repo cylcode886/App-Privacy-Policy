@@ -1,6 +1,5 @@
 Privacy Policy - English Version
 
-Last Updated: [March 25, 2026]
 
 Thank you for downloqad our app . We are committed to protecting your privacy. This Privacy Policy explains our practices regarding the collection, use, and disclosure of your information.
 
