@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — cylcode Apps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #111118;
+      --card: #16161f;
+      --border: rgba(255,255,255,0.08);
+      --accent: #6c63ff;
+      --accent2: #a78bfa;
+      --text: #e8e8f0;
+      --muted: #8a8aa0;
+      --white: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,10,15,0.95);
+      backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .lang-switch {
+      display: flex;
+      gap: 4px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 4px;
+    }
+
+    .lang-btn {
+      padding: 6px 14px;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 50px;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .lang-btn:not(.active):hover { color: var(--white); }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 32px 100px;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .effective-date {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(108,99,255,0.12);
+      border: 1px solid rgba(108,99,255,0.3);
+      color: var(--accent2);
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      margin-bottom: 40px;
+    }
+
+    .app-list {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+
+    .app-list-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 12px;
+    }
+
+    .app-list ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 8px 20px;
+    }
+
+    .app-list li {
+      color: var(--text);
+      font-size: 0.95rem;
+      padding: 4px 0;
+    }
+
+    .app-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 .num {
+      color: var(--accent);
+      font-weight: 800;
+      margin-right: 8px;
+    }
+
+    p {
+      color: var(--text);
+      margin-bottom: 16px;
+      font-size: 0.98rem;
+    }
+
+    p.intro {
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      margin-bottom: 32px;
+    }
+
+    ul.body-list {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    ul.body-list li {
+      color: var(--text);
+      padding: 8px 0 8px 22px;
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    ul.body-list li::before {
+      content: "→";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    ul.body-list li strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--accent2);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(167,139,250,0.3);
+      transition: all 0.2s;
+    }
+
+    a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
+
+    /* ── FOOTER ── */
+    footer {
+      max-width: 760px;
+      margin: 60px auto 0;
+      padding: 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    footer a {
+      color: var(--muted);
+      border-bottom: none;
+    }
+
+    footer a:hover { color: var(--white); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      header { padding: 16px 20px; }
+      main { padding: 40px 20px 60px; }
+      .app-list { padding: 20px; }
+      .app-list ul { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="https://cylcode886.github.io/" class="logo">cylcode<span>.</span></a>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="zh-tw">繁體中文</button>
+      <button class="lang-btn" data-lang="zh-cn">简体中文</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ──────────────────── ENGLISH ──────────────────── -->
+    <section class="lang-section active" data-lang="en">
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">cylcode iOS Apps</p>
+      <div class="effective-date">Effective Date: April 30, 2026</div>
+
+      <div class="app-list">
+        <div class="app-list-title">Applies to these apps</div>
+        <ul>
+          <li>GTB Chords</li>
+          <li>BS Board</li>
+          <li>EZ Breathe</li>
+          <li>K13 Piano</li>
+          <li>K20 Piano</li>
+          <li>Baseball Snake</li>
+          <li>Sky Versus</li>
+          <li>We Wall Sit</li>
+          <li>EZ Medication</li>
+        </ul>
+      </div>
+
+      <p class="intro">
+        Thank you for using our apps (each, the "App"). We are committed to protecting
+        your privacy and being transparent about what data we collect and how it is used.
+        This policy covers all apps developed by cylcode (YILI CHO).
+      </p>
+
+      <h2><span class="num">1.</span>Information We May Collect</h2>
+      <p>
+        Depending on the App and the features you use, we may collect the following types
+        of information. Not every app collects all of these — many of our apps collect
+        only the minimum needed to display ads.
+      </p>
+      <ul class="body-list">
+        <li><strong>Account Information</strong> — If an app offers account creation, we may collect your name, email address, and optionally your age or gender (used for fitness-related calculations).</li>
+        <li><strong>Activity and Health Data</strong> — For fitness or wellness apps, we may store data you choose to log: workout duration, steps, distance, medication schedules, or similar inputs. This data stays on your device unless you actively choose to sync it.</li>
+        <li><strong>Device Information</strong> — Device model, operating system version, language settings, and identifiers such as IDFA (Identifier for Advertisers) or IDFV (Identifier for Vendors).</li>
+        <li><strong>Usage Data</strong> — Anonymous information about how you interact with the App, including features used, session length, and crash reports, used to improve stability and design.</li>
+        <li><strong>Approximate Location</strong> — Derived from your IP address by ad and analytics providers, used to determine which ads can be shown in your region.</li>
+      </ul>
+
+      <h2><span class="num">2.</span>How We Use Your Information</h2>
+      <ul class="body-list">
+        <li>To provide and maintain the App's core features.</li>
+        <li>To calculate and display fitness or activity metrics (where applicable).</li>
+        <li>To send important system notifications and security alerts.</li>
+        <li>To analyze usage trends and improve product design.</li>
+        <li>To deliver and measure advertisements via Google AdMob.</li>
+      </ul>
+
+      <h2><span class="num">3.</span>Advertising and ATT</h2>
+      <p>
+        All of our apps display advertisements through <strong>Google AdMob</strong>.
+        In line with Apple's App Tracking Transparency (ATT) framework:
+      </p>
+      <ul class="body-list">
+        <li><strong>If you allow tracking</strong>, AdMob may use your IDFA to show personalized ads relevant to your interests.</li>
+        <li><strong>If you decline tracking</strong>, you will still see ads, but they will be non-personalized.</li>
+        <li>You can change this preference anytime in <strong>iOS Settings → Privacy &amp; Security → Tracking</strong>.</li>
+      </ul>
+
+      <h2><span class="num">4.</span>Third-Party Services</h2>
+      <p>
+        We do not sell your personal information. We may share limited data with the
+        following trusted service providers strictly for the purposes described:
+      </p>
+      <ul class="body-list">
+        <li><strong>Google AdMob</strong> — for displaying advertisements. <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a></li>
+        <li><strong>Firebase Analytics</strong> (where used) — for understanding user engagement and stability. <a href="https://firebase.google.com/support/privacy" target="_blank">Privacy Policy</a></li>
+        <li><strong>Apple iCloud</strong> (where used) — for syncing your data across your own devices. We do not have access to data stored in your iCloud.</li>
+      </ul>
+      <p>
+        These providers are bound by their own privacy policies and may not use your data
+        for purposes other than the services they provide to us.
+      </p>
+
+      <h2><span class="num">5.</span>Data Security and Retention</h2>
+      <p>
+        We use industry-standard security measures to protect any information collected.
+        We retain data only as long as necessary to provide the service. You can delete
+        your in-app data at any time through the App's settings, or by contacting us
+        directly for account-based data.
+      </p>
+
+      <h2><span class="num">6.</span>Your Rights and Choices</h2>
+      <ul class="body-list">
+        <li><strong>Access and Update</strong> — Review or change your information within the App settings, where applicable.</li>
+        <li><strong>Data Deletion</strong> — Delete your in-app data anytime, or contact us to request deletion of any account-based data.</li>
+        <li><strong>Tracking Preferences</strong> — Manage tracking via <strong>iOS Settings → Privacy &amp; Security → Tracking</strong>.</li>
+      </ul>
+
+      <h2><span class="num">7.</span>Children's Privacy</h2>
+      <p>
+        Our apps are not directed to children under 13. We do not knowingly collect
+        personal information from children. If we become aware of such collection, the
+        information will be deleted promptly.
+      </p>
+
+      <h2><span class="num">8.</span>Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. The latest version will
+        always be available at this URL. Material changes will be reflected in an
+        updated effective date above.
+      </p>
+
+      <h2><span class="num">9.</span>Contact</h2>
+      <p>
+        Questions or concerns? Email us at <a href="mailto:cylcode@icloud.com">cylcode@icloud.com</a>.
+      </p>
+    </section>
+
+    <!-- ──────────────────── 繁體中文 ──────────────────── -->
+    <section class="lang-section" data-lang="zh-tw">
+      <h1>隱私權政策</h1>
+      <p class="subtitle">cylcode iOS Apps</p>
+      <div class="effective-date">生效日期:2026 年 4 月 30 日</div>
+
+      <div class="app-list">
+        <div class="app-list-title">適用 App</div>
+        <ul>
+          <li>GTB Chords</li>
+          <li>BS Board</li>
+          <li>EZ Breathe</li>
+          <li>K13 Piano</li>
+          <li>K20 Piano</li>
+          <li>Baseball Snake</li>
+          <li>Sky Versus</li>
+          <li>We Wall Sit</li>
+          <li>EZ Medication</li>
+        </ul>
+      </div>
+
+      <p class="intro">
+        感謝您使用我們的 App。我們重視您的隱私,並致力於透明地說明我們收集哪些資料、
+        如何使用。本政策適用於所有由 cylcode(YILI CHO)開發的 App。
+      </p>
+
+      <h2><span class="num">1.</span>我們可能收集的資訊</h2>
+      <p>
+        根據您使用的 App 與功能,我們可能會收集以下類型的資訊。並非每個 App 都會收集
+        全部項目 —— 我們大多數 App 只收集顯示廣告所需的最低限度資訊。
+      </p>
+      <ul class="body-list">
+        <li><strong>帳號資料</strong> —— 若 App 提供帳號註冊功能,我們可能會收集您的姓名、電子郵件,以及可選的年齡或性別(用於計算運動相關數據)。</li>
+        <li><strong>活動與健康數據</strong> —— 健身或健康類 App 中,我們可能會儲存您主動記錄的資料:運動時長、步數、距離、用藥提醒等。這些資料原則上儲存於您的裝置,除非您主動選擇同步。</li>
+        <li><strong>裝置資訊</strong> —— 裝置型號、作業系統版本、語言設定,以及識別碼如 IDFA(廣告識別碼)或 IDFV(供應商識別碼)。</li>
+        <li><strong>使用數據</strong> —— 您與 App 互動的匿名資訊,包括使用的功能、會話時長與當機紀錄,用於改善穩定性與設計。</li>
+        <li><strong>大略地理位置</strong> —— 由廣告與分析服務透過 IP 位址推算,用於決定您所在地區可顯示哪些廣告。</li>
+      </ul>
+
+      <h2><span class="num">2.</span>資訊的使用方式</h2>
+      <ul class="body-list">
+        <li>提供並維護 App 的核心功能。</li>
+        <li>計算並顯示健身或活動數據(如適用)。</li>
+        <li>傳送重要的系統通知與安全警示。</li>
+        <li>分析使用趨勢以改善產品設計。</li>
+        <li>透過 Google AdMob 投放與量測廣告。</li>
+      </ul>
+
+      <h2><span class="num">3.</span>廣告與 ATT 追蹤透明度</h2>
+      <p>
+        所有 App 皆透過 <strong>Google AdMob</strong> 顯示廣告。
+        本 App 遵循 Apple 的 App Tracking Transparency(ATT)框架:
+      </p>
+      <ul class="body-list">
+        <li><strong>若您允許追蹤</strong>,AdMob 可能使用您的 IDFA 投放符合興趣的個人化廣告。</li>
+        <li><strong>若您拒絕追蹤</strong>,您仍會看到廣告,但廣告內容與您的興趣關聯性較低。</li>
+        <li>您可隨時前往 <strong>iOS「設定 → 隱私權與安全性 → 追蹤」</strong>更改此偏好。</li>
+      </ul>
+
+      <h2><span class="num">4.</span>第三方服務</h2>
+      <p>
+        我們不會販售您的個人資訊。我們可能會與以下受信任的服務提供商分享有限資料,
+        且僅限於以下用途:
+      </p>
+      <ul class="body-list">
+        <li><strong>Google AdMob</strong> —— 用於顯示廣告。<a href="https://policies.google.com/privacy" target="_blank">隱私政策</a></li>
+        <li><strong>Firebase Analytics</strong>(若使用) —— 用於了解使用者參與度與穩定性。<a href="https://firebase.google.com/support/privacy" target="_blank">隱私政策</a></li>
+        <li><strong>Apple iCloud</strong>(若使用) —— 用於在您自己的裝置間同步資料。我們無法存取您 iCloud 中的資料。</li>
+      </ul>
+      <p>
+        這些服務商受其自身隱私政策約束,不得將您的資料用於提供服務以外的用途。
+      </p>
+
+      <h2><span class="num">5.</span>資料安全與保留</h2>
+      <p>
+        我們採用業界標準的安全措施保護收集到的資訊。我們僅在提供服務所必需的期限內
+        保留資料。您可隨時透過 App 設定刪除應用內資料,或聯絡我們刪除帳號相關資料。
+      </p>
+
+      <h2><span class="num">6.</span>您的權利與選擇</h2>
+      <ul class="body-list">
+        <li><strong>存取與更新</strong> —— 透過 App 設定查看或修改您的資訊(如適用)。</li>
+        <li><strong>資料刪除</strong> —— 隨時刪除應用內資料,或聯絡我們刪除帳號資料。</li>
+        <li><strong>追蹤偏好</strong> —— 透過 <strong>iOS「設定 → 隱私權與安全性 → 追蹤」</strong>管理追蹤授權。</li>
+      </ul>
+
+      <h2><span class="num">7.</span>兒童隱私</h2>
+      <p>
+        我們的 App 並非針對 13 歲以下兒童設計。我們不會故意收集兒童的個人資料。
+        若我們發現此類資料,將立即刪除。
+      </p>
+
+      <h2><span class="num">8.</span>政策變更</h2>
+      <p>
+        本政策可能不定期更新。最新版本將永遠公布在本網址。重大變更會反映在
+        上方的「生效日期」中。
+      </p>
+
+      <h2><span class="num">9.</span>聯絡我們</h2>
+      <p>
+        若有任何疑問,請來信:<a href="mailto:cylcode@icloud.com">cylcode@icloud.com</a>。
+      </p>
+    </section>
+
+    <!-- ──────────────────── 简体中文 ──────────────────── -->
+    <section class="lang-section" data-lang="zh-cn">
+      <h1>隐私政策</h1>
+      <p class="subtitle">cylcode iOS Apps</p>
+      <div class="effective-date">生效日期：2026 年 4 月 30 日</div>
+
+      <div class="app-list">
+        <div class="app-list-title">适用 App</div>
+        <ul>
+          <li>GTB Chords</li>
+          <li>BS Board</li>
+          <li>EZ Breathe</li>
+          <li>K13 Piano</li>
+          <li>K20 Piano</li>
+          <li>Baseball Snake</li>
+          <li>Sky Versus</li>
+          <li>We Wall Sit</li>
+          <li>EZ Medication</li>
+        </ul>
+      </div>
+
+      <p class="intro">
+        感谢您使用我们的 App。我们重视您的隐私，并致力于透明地说明我们收集哪些数据、
+        如何使用。本政策适用于所有由 cylcode（YILI CHO）开发的 App。
+      </p>
+
+      <h2><span class="num">1.</span>我们可能收集的信息</h2>
+      <p>
+        根据您使用的 App 与功能，我们可能会收集以下类型的信息。并非每个 App 都会收集
+        全部项目 —— 我们大多数 App 只收集显示广告所需的最低限度信息。
+      </p>
+      <ul class="body-list">
+        <li><strong>账号信息</strong> —— 若 App 提供账号注册功能，我们可能会收集您的姓名、电子邮件，以及可选的年龄或性别（用于计算运动相关数据）。</li>
+        <li><strong>活动与健康数据</strong> —— 健身或健康类 App 中，我们可能会存储您主动记录的数据：运动时长、步数、距离、用药提醒等。这些数据原则上存储于您的设备，除非您主动选择同步。</li>
+        <li><strong>设备信息</strong> —— 设备型号、操作系统版本、语言设置，以及标识符如 IDFA（广告标识符）或 IDFV（供应商标识符）。</li>
+        <li><strong>使用数据</strong> —— 您与 App 交互的匿名信息，包括使用的功能、会话时长与崩溃记录，用于改善稳定性与设计。</li>
+        <li><strong>大致地理位置</strong> —— 由广告与分析服务通过 IP 地址推算，用于决定您所在地区可显示哪些广告。</li>
+      </ul>
+
+      <h2><span class="num">2.</span>信息的使用方式</h2>
+      <ul class="body-list">
+        <li>提供并维护 App 的核心功能。</li>
+        <li>计算并显示健身或活动数据（如适用）。</li>
+        <li>发送重要的系统通知与安全警报。</li>
+        <li>分析使用趋势以改善产品设计。</li>
+        <li>通过 Google AdMob 投放与衡量广告。</li>
+      </ul>
+
+      <h2><span class="num">3.</span>广告与 ATT 追踪透明度</h2>
+      <p>
+        所有 App 均通过 <strong>Google AdMob</strong> 显示广告。
+        本 App 遵循 Apple 的 App Tracking Transparency（ATT）框架：
+      </p>
+      <ul class="body-list">
+        <li><strong>若您允许追踪</strong>，AdMob 可能使用您的 IDFA 投放符合兴趣的个性化广告。</li>
+        <li><strong>若您拒绝追踪</strong>，您仍会看到广告，但广告内容与您的兴趣关联性较低。</li>
+        <li>您可随时前往 <strong>iOS「设置 → 隐私与安全性 → 追踪」</strong>更改此偏好。</li>
+      </ul>
+
+      <h2><span class="num">4.</span>第三方服务</h2>
+      <p>
+        我们不会销售您的个人信息。我们可能会与以下受信任的服务提供商分享有限数据，
+        且仅限于以下用途：
+      </p>
+      <ul class="body-list">
+        <li><strong>Google AdMob</strong> —— 用于显示广告。<a href="https://policies.google.com/privacy" target="_blank">隐私政策</a></li>
+        <li><strong>Firebase Analytics</strong>（若使用） —— 用于了解用户参与度与稳定性。<a href="https://firebase.google.com/support/privacy" target="_blank">隐私政策</a></li>
+        <li><strong>Apple iCloud</strong>（若使用） —— 用于在您自己的设备间同步数据。我们无法访问您 iCloud 中的数据。</li>
+      </ul>
+      <p>
+        这些服务商受其自身隐私政策约束，不得将您的数据用于提供服务以外的用途。
+      </p>
+
+      <h2><span class="num">5.</span>数据安全与保留</h2>
+      <p>
+        我们采用行业标准的安全措施保护收集到的信息。我们仅在提供服务所必需的期限内
+        保留数据。您可随时通过 App 设置删除应用内数据，或联系我们删除账号相关数据。
+      </p>
+
+      <h2><span class="num">6.</span>您的权利与选择</h2>
+      <ul class="body-list">
+        <li><strong>访问与更新</strong> —— 通过 App 设置查看或修改您的信息（如适用）。</li>
+        <li><strong>数据删除</strong> —— 随时删除应用内数据，或联系我们删除账号数据。</li>
+        <li><strong>追踪偏好</strong> —— 通过 <strong>iOS「设置 → 隐私与安全性 → 追踪」</strong>管理追踪授权。</li>
+      </ul>
+
+      <h2><span class="num">7.</span>儿童隐私</h2>
+      <p>
+        我们的 App 并非针对 13 岁以下儿童设计。我们不会故意收集儿童的个人资料。
+        若我们发现此类资料，将立即删除。
+      </p>
+
+      <h2><span class="num">8.</span>政策变更</h2>
+      <p>
+        本政策可能不定期更新。最新版本将始终发布在本网址。重大变更会反映在
+        上方的「生效日期」中。
+      </p>
+
+      <h2><span class="num">9.</span>联系我们</h2>
+      <p>
+        若有任何疑问，请来信：<a href="mailto:cylcode@icloud.com">cylcode@icloud.com</a>。
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 cylcode (YILI CHO) · <a href="https://cylcode886.github.io/">Back to Portfolio</a>
+  </footer>
+
+  <script>
+    // Language switcher
+    const buttons = document.querySelectorAll('.lang-btn');
+    const sections = document.querySelectorAll('.lang-section');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        sections.forEach(s => s.classList.remove('active'));
+        document.querySelector(`.lang-section[data-lang="${lang}"]`).classList.add('active');
+
+        // Update <html lang> attribute for accessibility / SEO
+        document.documentElement.lang = lang;
+        // Save preference
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+      });
+    });
+
+    // Restore saved language preference
+    try {
+      const saved = localStorage.getItem('lang');
+      if (saved && ['en','zh-tw','zh-cn'].includes(saved)) {
+        document.querySelector(`.lang-btn[data-lang="${saved}"]`)?.click();
+      }
+    } catch (e) {}
+  </script>
+
+</body>
+</html>
